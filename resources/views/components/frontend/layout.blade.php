@@ -300,9 +300,9 @@
             <div class="flex lg:hidden items-center justify-center h-12">
                 <a href="{{ url('/') }}" class="flex items-center gap-2">
                     <img src="{{ asset('storage/' . $logo) }}" alt="{{ $siteName }}" class="h-7 w-auto">
-                    <div class="text-center">
+                    <div>
                         <h1 class="text-white font-bold text-xs leading-tight">{{ $siteName }}</h1>
-                        <p class="text-primary-200 text-[8px] leading-tight">{{ Str::limit($siteTagline, 35) }}</p>
+                        <p class="text-primary-200 text-[8px] leading-tight">{{ $siteTagline }}</p>
                     </div>
                 </a>
             </div>
