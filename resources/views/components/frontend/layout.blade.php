@@ -85,7 +85,7 @@
         
         /* Mobile Bottom Padding */
         .main-content {
-            padding-bottom: 4.5rem;
+            padding-bottom: 5rem;
         }
         @media (min-width: 1024px) {
             .main-content {
@@ -93,75 +93,12 @@
             }
         }
         
-        /* Bottom Navigation - Premium Green Theme */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background: linear-gradient(135deg, #15803d 0%, #166534 50%, #14532d 100%);
-            padding: 0.375rem 0 calc(0.375rem + env(safe-area-inset-bottom));
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-        }
-        .bottom-nav::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20.5V18H19V20.5H16.5V21.5H19V24H20V21.5H22.5V20.5H20Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        .bottom-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 0.35rem 0.5rem;
-            color: rgba(255, 255, 255, 0.7);
-            transition: all 0.2s;
-            border-radius: 0.5rem;
-            position: relative;
-        }
-        .bottom-nav-item.active,
-        .bottom-nav-item:hover {
-            color: white;
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .bottom-nav-item.active::after {
-            content: '';
-            position: absolute;
-            bottom: -0.125rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1rem;
-            height: 2px;
-            background: white;
-            border-radius: 1px;
-        }
-        .bottom-nav-item i {
-            font-size: 1rem;
-            margin-bottom: 0.125rem;
-        }
-        .bottom-nav-item span {
-            font-size: 0.6rem;
-            font-weight: 500;
+        /* Safe area for iOS */
+        .safe-area-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
         }
         
-        /* Menu Button in Bottom Nav */
-        .menu-btn {
-            width: 2.25rem;
-            height: 2.25rem;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.2s;
-        }
-        .menu-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
+
         
         /* Floating WhatsApp */
         .whatsapp-float {
@@ -466,33 +403,41 @@
         </div>
     </footer>
 
-    {{-- Mobile Bottom Navigation --}}
-    <nav class="bottom-nav lg:hidden">
-        <div class="max-w-lg mx-auto px-2 relative">
-            <div class="flex items-center justify-between">
-                <a href="{{ url('/') }}" class="bottom-nav-item {{ request()->is('/') ? 'active' : '' }}">
-                    <i class="fas fa-home"></i>
-                    <span>Utama</span>
-                </a>
-                <a href="{{ url('/berita') }}" class="bottom-nav-item {{ request()->is('berita*') ? 'active' : '' }}">
-                    <i class="fas fa-newspaper"></i>
-                    <span>Berita</span>
-                </a>
-                <a href="{{ url('/galeri') }}" class="bottom-nav-item {{ request()->is('galeri*') ? 'active' : '' }}">
-                    <i class="fas fa-images"></i>
-                    <span>Galeri</span>
-                </a>
-                <a href="{{ url('/tentang') }}" class="bottom-nav-item {{ request()->is('tentang') ? 'active' : '' }}">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Tentang</span>
-                </a>
-                {{-- Menu Button --}}
-                <button @click="slideMenuOpen = true" class="menu-btn">
-                    <i class="fas fa-bars text-sm"></i>
-                </button>
-            </div>
+    {{-- Mobile Bottom Navigation - Perpustakaan Style --}}
+    <div class="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-primary-800 to-primary-900 lg:hidden z-50 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.25)]">
+        <div class="flex items-center justify-around py-2">
+            <a href="{{ url('/') }}" class="flex flex-col items-center py-1.5 px-3 {{ request()->is('/') ? 'text-white' : 'text-primary-300' }} hover:text-white transition">
+                <span class="w-10 h-10 rounded-xl flex items-center justify-center {{ request()->is('/') ? 'bg-white/20' : '' }}">
+                    <i class="fas fa-home text-lg"></i>
+                </span>
+                <span class="text-[10px] mt-0.5 font-medium">Utama</span>
+            </a>
+            <a href="{{ url('/berita') }}" class="flex flex-col items-center py-1.5 px-3 {{ request()->is('berita*') ? 'text-white' : 'text-primary-300' }} hover:text-white transition">
+                <span class="w-10 h-10 rounded-xl flex items-center justify-center {{ request()->is('berita*') ? 'bg-white/20' : '' }}">
+                    <i class="fas fa-newspaper text-lg"></i>
+                </span>
+                <span class="text-[10px] mt-0.5 font-medium">Berita</span>
+            </a>
+            <a href="{{ url('/kontak') }}" class="flex flex-col items-center -mt-5">
+                <span class="w-14 h-14 bg-white text-primary-600 rounded-full flex items-center justify-center shadow-lg" style="box-shadow: 0 0 0 4px #166534">
+                    <i class="fas fa-envelope text-xl"></i>
+                </span>
+                <span class="text-[10px] mt-1 font-medium text-white">Hubungi</span>
+            </a>
+            <a href="{{ url('/tentang') }}" class="flex flex-col items-center py-1.5 px-3 {{ request()->is('tentang') ? 'text-white' : 'text-primary-300' }} hover:text-white transition">
+                <span class="w-10 h-10 rounded-xl flex items-center justify-center {{ request()->is('tentang') ? 'bg-white/20' : '' }}">
+                    <i class="fas fa-info-circle text-lg"></i>
+                </span>
+                <span class="text-[10px] mt-0.5 font-medium">Tentang</span>
+            </a>
+            <button @click="slideMenuOpen = true" class="flex flex-col items-center py-1.5 px-3 text-primary-300 hover:text-white transition">
+                <span class="w-10 h-10 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-bars text-lg"></i>
+                </span>
+                <span class="text-[10px] mt-0.5 font-medium">Menu</span>
+            </button>
         </div>
-    </nav>
+    </div>
 
     {{-- Slide Menu Overlay --}}
     <div class="slide-menu-overlay lg:hidden" :class="{ 'active': slideMenuOpen }" @click="slideMenuOpen = false"></div>
