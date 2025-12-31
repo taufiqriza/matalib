@@ -296,18 +296,28 @@
     {{-- Main Header --}}
     <header class="hero-gradient sticky top-0 z-40 shadow-lg">
         <div class="max-w-7xl mx-auto px-3 lg:px-4">
-            <div class="flex items-center justify-between h-12 lg:h-20">
-                {{-- Logo with Name & Tagline --}}
+            {{-- Mobile Header - Centered --}}
+            <div class="flex lg:hidden items-center justify-center h-12">
                 <a href="{{ url('/') }}" class="flex items-center gap-2">
-                    <img src="{{ asset('storage/' . $logo) }}" alt="{{ $siteName }}" class="h-7 lg:h-12 w-auto">
+                    <img src="{{ asset('storage/' . $logo) }}" alt="{{ $siteName }}" class="h-7 w-auto">
+                    <div class="text-center">
+                        <h1 class="text-white font-bold text-xs leading-tight">{{ $siteName }}</h1>
+                        <p class="text-primary-200 text-[8px] leading-tight">{{ Str::limit($siteTagline, 35) }}</p>
+                    </div>
+                </a>
+            </div>
+            
+            {{-- Desktop Header --}}
+            <div class="hidden lg:flex items-center justify-between h-20">
+                <a href="{{ url('/') }}" class="flex items-center gap-3">
+                    <img src="{{ asset('storage/' . $logo) }}" alt="{{ $siteName }}" class="h-12 w-auto">
                     <div>
-                        <h1 class="text-white font-bold text-xs lg:text-xl leading-tight">{{ $siteName }}</h1>
-                        <p class="text-primary-200 text-[8px] lg:text-sm leading-tight">{{ Str::limit($siteTagline, 30) }}</p>
+                        <h1 class="text-white font-bold text-xl leading-tight">{{ $siteName }}</h1>
+                        <p class="text-primary-200 text-sm leading-tight">{{ $siteTagline }}</p>
                     </div>
                 </a>
 
-                {{-- Desktop Navigation --}}
-                <nav class="hidden lg:flex items-center gap-1">
+                <nav class="flex items-center gap-1">
                     <a href="{{ url('/') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('/') ? 'bg-white/15' : '' }}">
                         <i class="fas fa-home text-xs"></i> Laman Utama
                     </a>
@@ -325,8 +335,7 @@
                     </a>
                 </nav>
 
-                {{-- Desktop Login --}}
-                <a href="{{ url('/admin') }}" class="hidden lg:flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-700 bg-white hover:bg-gray-50 rounded-xl shadow-sm transition">
+                <a href="{{ url('/admin') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-700 bg-white hover:bg-gray-50 rounded-xl shadow-sm transition">
                     <i class="fas fa-sign-in-alt"></i> Log Masuk
                 </a>
             </div>
@@ -339,66 +348,77 @@
     </main>
 
     {{-- Footer --}}
-    <footer class="bg-primary-900 text-white mt-6 lg:mt-16 pb-20 lg:pb-0">
-        <div class="max-w-7xl mx-auto px-4 py-6 lg:py-12">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
-                {{-- Logo & Description --}}
+    <footer class="bg-primary-900 text-white mt-6 lg:mt-16 pb-24 lg:pb-0">
+        {{-- Mobile Footer - Compact --}}
+        <div class="lg:hidden px-4 py-4">
+            <div class="text-center mb-3">
+                <img src="{{ asset('storage/' . $logo) }}" alt="{{ $siteName }}" class="h-8 w-auto mx-auto mb-2">
+                <h3 class="font-bold text-xs">{{ $siteName }}</h3>
+                <p class="text-primary-300 text-[9px]">{{ $siteTagline }}</p>
+            </div>
+            <div class="flex justify-center gap-2 mb-3">
+                @if($facebook)<a href="{{ $facebook }}" target="_blank" class="w-7 h-7 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center transition text-xs"><i class="fab fa-facebook-f"></i></a>@endif
+                @if($instagram)<a href="{{ $instagram }}" target="_blank" class="w-7 h-7 bg-white/10 hover:bg-pink-600 rounded-lg flex items-center justify-center transition text-xs"><i class="fab fa-instagram"></i></a>@endif
+                @if($youtube)<a href="{{ $youtube }}" target="_blank" class="w-7 h-7 bg-white/10 hover:bg-red-600 rounded-lg flex items-center justify-center transition text-xs"><i class="fab fa-youtube"></i></a>@endif
+                @if($whatsapp)<a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank" class="w-7 h-7 bg-white/10 hover:bg-green-600 rounded-lg flex items-center justify-center transition text-xs"><i class="fab fa-whatsapp"></i></a>@endif
+            </div>
+            <p class="text-primary-400 text-[8px] text-center">{{ $address }}</p>
+            <div class="border-t border-primary-800 mt-3 pt-3 text-center">
+                <p class="text-primary-400 text-[8px]">© {{ date('Y') }} {{ $siteName }}</p>
+            </div>
+        </div>
+        
+        {{-- Desktop Footer --}}
+        <div class="hidden lg:block max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-4 gap-8">
                 <div class="col-span-2">
-                    <div class="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
-                        <img src="{{ asset('storage/' . $logo) }}" alt="{{ $siteName }}" class="h-8 lg:h-12 w-auto">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="{{ asset('storage/' . $logo) }}" alt="{{ $siteName }}" class="h-12 w-auto">
                         <div>
-                            <h3 class="font-bold text-sm lg:text-lg">{{ $siteName }}</h3>
-                            <p class="text-primary-300 text-[10px] lg:text-sm">{{ $siteTagline }}</p>
+                            <h3 class="font-bold text-lg">{{ $siteName }}</h3>
+                            <p class="text-primary-300 text-sm">{{ $siteTagline }}</p>
                         </div>
                     </div>
-                    <p class="text-primary-300 text-[10px] lg:text-sm leading-relaxed mb-3 lg:mb-4">
+                    <p class="text-primary-300 text-sm leading-relaxed mb-4">
                         {{ \App\Models\Setting::get('site_description', 'Platform digital rasmi untuk Madrasah Tahfiz Al Qur\'an Ibnu Talib.') }}
                     </p>
-                    <div class="flex gap-2 lg:gap-3">
-                        @if($facebook)<a href="{{ $facebook }}" target="_blank" class="w-7 h-7 lg:w-10 lg:h-10 bg-white/10 hover:bg-blue-600 rounded-lg lg:rounded-xl flex items-center justify-center transition text-xs lg:text-base"><i class="fab fa-facebook-f"></i></a>@endif
-                        @if($instagram)<a href="{{ $instagram }}" target="_blank" class="w-7 h-7 lg:w-10 lg:h-10 bg-white/10 hover:bg-pink-600 rounded-lg lg:rounded-xl flex items-center justify-center transition text-xs lg:text-base"><i class="fab fa-instagram"></i></a>@endif
-                        @if($youtube)<a href="{{ $youtube }}" target="_blank" class="w-7 h-7 lg:w-10 lg:h-10 bg-white/10 hover:bg-red-600 rounded-lg lg:rounded-xl flex items-center justify-center transition text-xs lg:text-base"><i class="fab fa-youtube"></i></a>@endif
-                        @if($whatsapp)<a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank" class="w-7 h-7 lg:w-10 lg:h-10 bg-white/10 hover:bg-green-600 rounded-lg lg:rounded-xl flex items-center justify-center transition text-xs lg:text-base"><i class="fab fa-whatsapp"></i></a>@endif
+                    <div class="flex gap-3">
+                        @if($facebook)<a href="{{ $facebook }}" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-blue-600 rounded-xl flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>@endif
+                        @if($instagram)<a href="{{ $instagram }}" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-pink-600 rounded-xl flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>@endif
+                        @if($youtube)<a href="{{ $youtube }}" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-red-600 rounded-xl flex items-center justify-center transition"><i class="fab fa-youtube"></i></a>@endif
+                        @if($whatsapp)<a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-green-600 rounded-xl flex items-center justify-center transition"><i class="fab fa-whatsapp"></i></a>@endif
                     </div>
                 </div>
-
-                {{-- Quick Links --}}
                 <div>
-                    <h4 class="font-bold text-xs lg:text-lg mb-2 lg:mb-4">Menu</h4>
-                    <ul class="space-y-1 lg:space-y-2">
-                        <li><a href="{{ url('/') }}" class="text-primary-300 hover:text-white transition text-[10px] lg:text-sm">Laman Utama</a></li>
-                        <li><a href="{{ url('/berita') }}" class="text-primary-300 hover:text-white transition text-[10px] lg:text-sm">Berita</a></li>
-                        <li><a href="{{ url('/galeri') }}" class="text-primary-300 hover:text-white transition text-[10px] lg:text-sm">Galeri</a></li>
-                        <li><a href="{{ url('/tentang') }}" class="text-primary-300 hover:text-white transition text-[10px] lg:text-sm">Tentang Kami</a></li>
-                        <li><a href="{{ url('/kontak') }}" class="text-primary-300 hover:text-white transition text-[10px] lg:text-sm">Hubungi Kami</a></li>
+                    <h4 class="font-bold text-lg mb-4">Menu</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{{ url('/') }}" class="text-primary-300 hover:text-white transition text-sm">Laman Utama</a></li>
+                        <li><a href="{{ url('/berita') }}" class="text-primary-300 hover:text-white transition text-sm">Berita</a></li>
+                        <li><a href="{{ url('/galeri') }}" class="text-primary-300 hover:text-white transition text-sm">Galeri</a></li>
+                        <li><a href="{{ url('/tentang') }}" class="text-primary-300 hover:text-white transition text-sm">Tentang Kami</a></li>
+                        <li><a href="{{ url('/kontak') }}" class="text-primary-300 hover:text-white transition text-sm">Hubungi Kami</a></li>
                     </ul>
                 </div>
-
-                {{-- Contact Info --}}
                 <div>
-                    <h4 class="font-bold text-xs lg:text-lg mb-2 lg:mb-4">Hubungi</h4>
-                    <ul class="space-y-2 lg:space-y-3">
+                    <h4 class="font-bold text-lg mb-4">Hubungi</h4>
+                    <ul class="space-y-3">
                         @if($phone)
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-phone text-primary-400 mt-0.5 text-[10px] lg:text-sm"></i>
-                            <span class="text-primary-300 text-[10px] lg:text-sm">{{ $phone }}</span>
+                            <i class="fas fa-phone text-primary-400 mt-0.5 text-sm"></i>
+                            <span class="text-primary-300 text-sm">{{ $phone }}</span>
                         </li>
                         @endif
                         @if($address)
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-map-marker-alt text-primary-400 mt-0.5 text-[10px] lg:text-sm"></i>
-                            <span class="text-primary-300 text-[10px] lg:text-sm">{{ $address }}</span>
+                            <i class="fas fa-map-marker-alt text-primary-400 mt-0.5 text-sm"></i>
+                            <span class="text-primary-300 text-sm">{{ $address }}</span>
                         </li>
                         @endif
                     </ul>
                 </div>
             </div>
-
-            {{-- Copyright --}}
-            <div class="border-t border-primary-800 mt-4 lg:mt-8 pt-4 lg:pt-8 text-center">
-                <p class="text-primary-400 text-[10px] lg:text-sm">
-                    © {{ date('Y') }} {{ $siteName }}. Hak Cipta Terpelihara.
-                </p>
+            <div class="border-t border-primary-800 mt-8 pt-8 text-center">
+                <p class="text-primary-400 text-sm">© {{ date('Y') }} {{ $siteName }}. Hak Cipta Terpelihara.</p>
             </div>
         </div>
     </footer>
