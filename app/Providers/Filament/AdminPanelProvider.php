@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Models\Setting;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -18,18 +19,29 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Support\Facades\Storage;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        return $panel
+        // Get dynamic settings
+        $siteName = $this->getSetting('site_name', 'Matalib');
+        $siteTagline = $this->getSetting('site_tagline', 'Madrasah Tahfiz Al Qur\'an Ibnu Talib');
+        $siteFavicon = $this->getSetting('site_favicon');
+        $siteLogo = $this->getSetting('site_logo');
+
+        $brandName = $siteName;
+        if ($siteTagline) {
+            $brandName = $siteName;
+        }
+
+        $panel = $panel
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Matalib CMS')
-            ->favicon(asset('favicon.ico'))
+            ->brandName($brandName)
             ->colors([
                 'primary' => Color::Emerald,
                 'danger' => Color::Rose,
@@ -74,6 +86,29 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s');
+
+        // Set dynamic favicon
+        if ($siteFavicon && Storage::disk('public')->exists($siteFavicon)) {
+            $panel->favicon(Storage::url($siteFavicon));
+        } else {
+            $panel->favicon(asset('favicon.ico'));
+        }
+
+        // Set dynamic logo
+        if ($siteLogo && Storage::disk('public')->exists($siteLogo)) {
+            $panel->brandLogo(Storage::url($siteLogo));
+            $panel->brandLogoHeight('2.5rem');
+        }
+
+        return $panel;
+    }
+
+    private function getSetting(string $key, mixed $default = null): mixed
+    {
+        try {
+            return Setting::get($key, $default);
+        } catch (\Exception $e) {
+            return $default;
+        }
     }
 }
-
