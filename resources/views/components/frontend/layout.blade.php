@@ -22,7 +22,7 @@
     @if($favicon)
         <link rel="icon" type="image/png" href="{{ asset('storage/' . $favicon) }}">
     @else
-        <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     @endif
     
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
