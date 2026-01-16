@@ -10,5 +10,4 @@ Route::get('/berita/{slug}', [FrontendController::class, 'beritaShow'])->name('b
 Route::get('/tentang', [FrontendController::class, 'tentang'])->name('tentang');
 Route::get('/kontak', [FrontendController::class, 'kontak'])->name('kontak');
 Route::get('/galeri', [FrontendController::class, 'galeri'])->name('galeri');
-Route::get('/login', [FrontendController::class, 'login'])->name('login.page');
 Route::get('/halaman/{slug}', [FrontendController::class, 'page'])->name('page');

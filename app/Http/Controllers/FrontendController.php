@@ -66,14 +66,4 @@ class FrontendController extends Controller
     {
         return view('frontend.galeri');
     }
-
-    public function login()
-    {
-        // Redirect if already logged in
-        if (auth()->check()) {
-            return redirect('/admin');
-        }
-        // Redirect to Filament login
-        return redirect('/admin/login');
-    }
 }
