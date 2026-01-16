@@ -335,7 +335,7 @@
                     </a>
                 </nav>
 
-                <a href="{{ url('/admin') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-700 bg-white hover:bg-gray-50 rounded-xl shadow-sm transition">
+                <a href="{{ url('/login') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-700 bg-white hover:bg-gray-50 rounded-xl shadow-sm transition">
                     <i class="fas fa-sign-in-alt"></i> Log Masuk
                 </a>
             </div>
