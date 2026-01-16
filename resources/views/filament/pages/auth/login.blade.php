@@ -37,11 +37,24 @@
     </script>
     
     @filamentStyles
-    @vite('resources/css/app.css')
     
     <style>
         body { font-family: 'Inter', sans-serif; }
         .arabic-text { font-family: 'Amiri', serif; direction: rtl; }
+        /* Override Filament colors */
+        :root {
+            --primary-50: 240 253 244;
+            --primary-100: 220 252 231;
+            --primary-200: 187 247 208;
+            --primary-300: 134 239 172;
+            --primary-400: 74 222 128;
+            --primary-500: 34 197 94;
+            --primary-600: 22 163 74;
+            --primary-700: 21 128 61;
+            --primary-800: 22 101 52;
+            --primary-900: 20 83 45;
+            --primary-950: 5 46 22;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-primary-50 via-white to-primary-100 min-h-screen">
@@ -173,6 +186,5 @@
     </footer>
 
     @filamentScripts
-    @vite('resources/js/app.js')
 </body>
 </html>
