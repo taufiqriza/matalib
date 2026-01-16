@@ -61,4 +61,9 @@ class FrontendController extends Controller
     {
         return view('frontend.kontak');
     }
+
+    public function galeri()
+    {
+        return view('frontend.galeri');
+    }
 }

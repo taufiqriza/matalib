@@ -211,24 +211,24 @@
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
                     <div class="p-6 sm:p-8">
                         <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                            <i class="fas fa-mosque text-white text-2xl"></i>
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-xl text-gray-900 mb-3">Kajian Kitab</h3>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Akademik Diniyah</h3>
                         <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-                            Pembelajaran kitab-kitab kuning klasik dengan sanad yang bersambung kepada para ulama terdahulu secara tradisional.
+                            Pembelajaran ilmu-ilmu agama seperti Fiqh, Aqidah, Sirah, dan Akhlak secara sistematik dan berstruktur.
                         </p>
                         <ul class="space-y-2 mb-6">
                             <li class="flex items-center gap-2 text-sm text-gray-600">
                                 <i class="fas fa-check text-amber-500"></i>
-                                Kitab Turath
+                                Fiqh & Aqidah
                             </li>
                             <li class="flex items-center gap-2 text-sm text-gray-600">
                                 <i class="fas fa-check text-amber-500"></i>
-                                Sanad Bersambung
+                                Sirah Nabawiyah
                             </li>
                             <li class="flex items-center gap-2 text-sm text-gray-600">
                                 <i class="fas fa-check text-amber-500"></i>
-                                Ijazah Kitab
+                                Akhlak Islamiyah
                             </li>
                         </ul>
                         <a href="#" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 group-hover:gap-3 transition-all">
