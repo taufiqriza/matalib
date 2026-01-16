@@ -1,212 +1,395 @@
 <x-frontend.layout title="Laman Utama">
 
-    {{-- Hero Section --}}
-    <section class="relative overflow-hidden">
+    {{-- ========================================
+         HERO SECTION - Impak Visual Maksimum
+    ========================================= --}}
+    <section class="relative overflow-hidden min-h-[50vh] lg:min-h-[70vh] flex items-center">
+        {{-- Background dengan Pattern --}}
         <div class="absolute inset-0 hero-gradient"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiPjxwYXRoIGQ9Ik0zNiAxOGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptMCAyMGMtNC40MTggMC04LTMuNTgyLTgtOHMzLjU4Mi04IDgtOCA4IDMuNTgyIDggOC0zLjU4MiA4LTggOHoiLz48L2c+PC9nPjwvc3ZnPg==')]"></div>
         
-        <div class="relative max-w-7xl mx-auto px-3 lg:px-4 py-6 lg:py-24">
-            <div class="grid lg:grid-cols-2 gap-4 lg:gap-12 items-center">
-                {{-- Left Content --}}
-                <div class="text-center lg:text-left">
-                    <p class="arabic-text text-base lg:text-3xl text-primary-200 mb-2 lg:mb-4">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                
+                {{-- Konten Utama --}}
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    {{-- Bismillah --}}
+                    <div class="mb-6">
+                        <p class="arabic-text text-xl sm:text-2xl lg:text-4xl text-white/80 mb-2">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                        <p class="text-primary-200 text-xs sm:text-sm">Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang</p>
+                    </div>
                     
-                    <h1 class="text-lg lg:text-5xl font-extrabold text-white mb-2 lg:mb-4 leading-tight">
-                        Selamat Datang ke<br>
-                        <span class="text-accent-400">{{ \App\Models\Setting::get('site_name', 'Matalib') }}</span>
+                    {{-- Tajuk Utama --}}
+                    <h1 class="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 lg:mb-6 leading-tight">
+                        Selamat Datang ke
+                        <span class="block text-accent-400 mt-1">{{ \App\Models\Setting::get('site_name', 'Matalib') }}</span>
                     </h1>
                     
-                    <p class="text-xs lg:text-xl text-primary-100 mb-4 lg:mb-8">
+                    {{-- Tagline --}}
+                    <p class="text-sm sm:text-base lg:text-xl text-primary-100 mb-6 lg:mb-8 max-w-xl mx-auto lg:mx-0">
                         {{ \App\Models\Setting::get('site_tagline', 'Madrasah Tahfiz Al Qur\'an Ibnu Talib') }}
                     </p>
                     
-                    <div class="flex gap-2 lg:gap-4 justify-center lg:justify-start">
-                        <a href="{{ url('/tentang') }}" class="inline-flex items-center justify-center gap-1.5 lg:gap-2 px-3 py-1.5 lg:px-6 lg:py-3 bg-white text-primary-700 font-semibold rounded-lg lg:rounded-xl shadow-lg hover:shadow-xl transition-all text-[10px] lg:text-base">
-                            <i class="fas fa-info-circle text-[10px] lg:text-base"></i> Tentang Kami
+                    {{-- CTA Buttons --}}
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                        <a href="{{ url('/tentang') }}" class="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-white text-primary-700 font-bold rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                            <i class="fas fa-info-circle group-hover:rotate-12 transition-transform"></i>
+                            <span>Tentang Kami</span>
                         </a>
-                        <a href="{{ url('/kontak') }}" class="inline-flex items-center justify-center gap-1.5 lg:gap-2 px-3 py-1.5 lg:px-6 lg:py-3 bg-primary-600 text-white font-semibold rounded-lg lg:rounded-xl border border-white/20 hover:bg-primary-500 transition-all text-[10px] lg:text-base">
-                            <i class="fas fa-envelope text-[10px] lg:text-base"></i> Hubungi Kami
+                        <a href="{{ url('/kontak') }}" class="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-primary-500/30 text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white hover:text-primary-700 transition-all duration-300">
+                            <i class="fas fa-envelope group-hover:scale-110 transition-transform"></i>
+                            <span>Hubungi Kami</span>
                         </a>
                     </div>
                 </div>
                 
-                {{-- Stats Cards --}}
-                <div class="grid grid-cols-4 lg:grid-cols-2 gap-2 lg:gap-4">
-                    <div class="glass-card rounded-lg lg:rounded-2xl p-2 lg:p-6 text-center">
-                        <div class="w-6 h-6 lg:w-14 lg:h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg lg:rounded-2xl flex items-center justify-center mx-auto mb-1 lg:mb-3 shadow-lg">
-                            <i class="fas fa-book-quran text-white text-[10px] lg:text-2xl"></i>
+                {{-- Statistik Kad --}}
+                <div class="order-1 lg:order-2">
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4 max-w-md mx-auto lg:max-w-none">
+                        {{-- Stat 1 --}}
+                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
+                                <i class="fas fa-book-quran text-white text-lg sm:text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">30</h3>
+                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Juz Al-Quran</p>
                         </div>
-                        <h3 class="text-sm lg:text-2xl font-bold text-gray-900">30</h3>
-                        <p class="text-gray-500 text-[8px] lg:text-sm">Juz</p>
-                    </div>
-                    <div class="glass-card rounded-lg lg:rounded-2xl p-2 lg:p-6 text-center">
-                        <div class="w-6 h-6 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg lg:rounded-2xl flex items-center justify-center mx-auto mb-1 lg:mb-3 shadow-lg">
-                            <i class="fas fa-user-graduate text-white text-[10px] lg:text-2xl"></i>
+                        
+                        {{-- Stat 2 --}}
+                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
+                                <i class="fas fa-user-graduate text-white text-lg sm:text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">100<span class="text-primary-500">+</span></h3>
+                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Pelajar Aktif</p>
                         </div>
-                        <h3 class="text-sm lg:text-2xl font-bold text-gray-900">100+</h3>
-                        <p class="text-gray-500 text-[8px] lg:text-sm">Pelajar</p>
-                    </div>
-                    <div class="glass-card rounded-lg lg:rounded-2xl p-2 lg:p-6 text-center">
-                        <div class="w-6 h-6 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg lg:rounded-2xl flex items-center justify-center mx-auto mb-1 lg:mb-3 shadow-lg">
-                            <i class="fas fa-chalkboard-teacher text-white text-[10px] lg:text-2xl"></i>
+                        
+                        {{-- Stat 3 --}}
+                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
+                                <i class="fas fa-chalkboard-teacher text-white text-lg sm:text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">20<span class="text-primary-500">+</span></h3>
+                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Guru & Ustaz</p>
                         </div>
-                        <h3 class="text-sm lg:text-2xl font-bold text-gray-900">20+</h3>
-                        <p class="text-gray-500 text-[8px] lg:text-sm">Guru</p>
-                    </div>
-                    <div class="glass-card rounded-lg lg:rounded-2xl p-2 lg:p-6 text-center">
-                        <div class="w-6 h-6 lg:w-14 lg:h-14 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg lg:rounded-2xl flex items-center justify-center mx-auto mb-1 lg:mb-3 shadow-lg">
-                            <i class="fas fa-award text-white text-[10px] lg:text-2xl"></i>
+                        
+                        {{-- Stat 4 --}}
+                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
+                                <i class="fas fa-award text-white text-lg sm:text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">50<span class="text-primary-500">+</span></h3>
+                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Hafiz Lulus</p>
                         </div>
-                        <h3 class="text-sm lg:text-2xl font-bold text-gray-900">50+</h3>
-                        <p class="text-gray-500 text-[8px] lg:text-sm">Hafiz</p>
                     </div>
                 </div>
             </div>
         </div>
         
-        {{-- Wave --}}
+        {{-- Wave Divider --}}
         <div class="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-6 lg:h-auto">
-                <path d="M0 60L60 52C120 45 240 30 360 22C480 15 600 15 720 19C840 22 960 30 1080 34C1200 37 1320 37 1380 37L1440 37V60H0Z" fill="#f0fdf4"/>
+            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" preserveAspectRatio="none">
+                <path d="M0 80L48 74.7C96 69 192 59 288 53.3C384 48 480 48 576 50.7C672 53 768 59 864 61.3C960 64 1056 64 1152 58.7C1248 53 1344 43 1392 37.3L1440 32V80H0Z" fill="#f0fdf4"/>
             </svg>
         </div>
     </section>
 
-    {{-- Program Section --}}
-    <section class="max-w-7xl mx-auto px-3 lg:px-4 py-6 lg:py-16">
-        <div class="text-center mb-4 lg:mb-12">
-            <span class="inline-block px-2 py-0.5 lg:px-4 lg:py-1.5 bg-primary-100 text-primary-700 text-[9px] lg:text-sm font-semibold rounded-full mb-2 lg:mb-4">
-                <i class="fas fa-star mr-1"></i> Program Unggulan
-            </span>
-            <h2 class="text-base lg:text-4xl font-bold text-gray-900 mb-1 lg:mb-4">Program Tahfiz Kami</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto text-[10px] lg:text-base">Menghafal Al-Qur'an dengan metode yang berkesan</p>
-        </div>
-        
-        <div class="grid grid-cols-3 gap-2 lg:gap-6">
-            {{-- Program 1 --}}
-            <div class="bg-white rounded-lg lg:rounded-2xl p-3 lg:p-6 shadow-sm border border-gray-100">
-                <div class="w-8 h-8 lg:w-14 lg:h-14 bg-gradient-to-br from-primary-500 to-emerald-600 rounded-lg lg:rounded-2xl flex items-center justify-center mb-2 lg:mb-4">
-                    <i class="fas fa-book-open text-white text-xs lg:text-xl"></i>
-                </div>
-                <h3 class="font-bold text-[10px] lg:text-xl text-gray-900 mb-1 lg:mb-2">Tahfiz 30 Juz</h3>
-                <p class="text-gray-600 text-[8px] lg:text-sm mb-2 lg:mb-4 line-clamp-2">Program menghafal 30 juz dalam 3 tahun</p>
-                <a href="#" class="inline-flex items-center text-primary-600 font-medium text-[8px] lg:text-sm">
-                    Lagi <i class="fas fa-arrow-right ml-1"></i>
-                </a>
+    {{-- ========================================
+         KENAPA PILIH KAMI - Trust Building
+    ========================================= --}}
+    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-primary-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            {{-- Section Header --}}
+            <div class="text-center mb-10 lg:mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">
+                    <i class="fas fa-check-circle"></i>
+                    Kenapa Pilih Kami
+                </span>
+                <h2 class="text-xl sm:text-2xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+                    Kelebihan Belajar di <span class="text-primary-600">Matalib</span>
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
+                    Persekitaran pembelajaran yang kondusif dengan bimbingan para huffaz berpengalaman
+                </p>
             </div>
             
-            {{-- Program 2 --}}
-            <div class="bg-white rounded-lg lg:rounded-2xl p-3 lg:p-6 shadow-sm border border-gray-100">
-                <div class="w-8 h-8 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg lg:rounded-2xl flex items-center justify-center mb-2 lg:mb-4">
-                    <i class="fas fa-mosque text-white text-xs lg:text-xl"></i>
+            {{-- Features Grid --}}
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                {{-- Feature 1 --}}
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-quran text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Metode Mutqin</h3>
+                    <p class="text-gray-600 text-sm">Kaedah hafalan yang terbukti berkesan dengan pemantapan bacaan berkualiti</p>
                 </div>
-                <h3 class="font-bold text-[10px] lg:text-xl text-gray-900 mb-1 lg:mb-2">Kajian Kitab</h3>
-                <p class="text-gray-600 text-[8px] lg:text-sm mb-2 lg:mb-4 line-clamp-2">Pembelajaran kitab kuning bersanad</p>
-                <a href="#" class="inline-flex items-center text-primary-600 font-medium text-[8px] lg:text-sm">
-                    Lagi <i class="fas fa-arrow-right ml-1"></i>
-                </a>
-            </div>
-            
-            {{-- Program 3 --}}
-            <div class="bg-white rounded-lg lg:rounded-2xl p-3 lg:p-6 shadow-sm border border-gray-100">
-                <div class="w-8 h-8 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg lg:rounded-2xl flex items-center justify-center mb-2 lg:mb-4">
-                    <i class="fas fa-language text-white text-xs lg:text-xl"></i>
+                
+                {{-- Feature 2 --}}
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Guru Berpengalaman</h3>
+                    <p class="text-gray-600 text-sm">Dibimbing oleh para huffaz yang telah hafal 30 juz dengan sanad bersambung</p>
                 </div>
-                <h3 class="font-bold text-[10px] lg:text-xl text-gray-900 mb-1 lg:mb-2">Bahasa Arab</h3>
-                <p class="text-gray-600 text-[8px] lg:text-sm mb-2 lg:mb-4 line-clamp-2">Penguasaan bahasa Arab aktif</p>
-                <a href="#" class="inline-flex items-center text-primary-600 font-medium text-[8px] lg:text-sm">
-                    Lagi <i class="fas fa-arrow-right ml-1"></i>
-                </a>
+                
+                {{-- Feature 3 --}}
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-home text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Kemudahan Lengkap</h3>
+                    <p class="text-gray-600 text-sm">Asrama selesa, dewan solat luas, dan persekitaran yang tenang untuk belajar</p>
+                </div>
+                
+                {{-- Feature 4 --}}
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-certificate text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Sijil Diiktiraf</h3>
+                    <p class="text-gray-600 text-sm">Pelajar menerima sijil tahfiz yang diiktiraf selepas menamatkan hafalan</p>
+                </div>
             </div>
         </div>
     </section>
 
-    {{-- News Section --}}
-    <section class="bg-gradient-to-b from-white to-primary-50 py-6 lg:py-16">
-        <div class="max-w-7xl mx-auto px-3 lg:px-4">
-            <div class="flex items-center justify-between mb-4 lg:mb-8">
-                <div>
-                    <span class="inline-block px-2 py-0.5 lg:px-4 lg:py-1.5 bg-primary-100 text-primary-700 text-[9px] lg:text-sm font-semibold rounded-full mb-1 lg:mb-2">
-                        <i class="fas fa-newspaper mr-1"></i> Berita
-                    </span>
-                    <h2 class="text-sm lg:text-3xl font-bold text-gray-900">Berita Terkini</h2>
+    {{-- ========================================
+         PROGRAM UNGGULAN - Perkhidmatan Utama
+    ========================================= --}}
+    <section class="py-12 sm:py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            {{-- Section Header --}}
+            <div class="text-center mb-10 lg:mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">
+                    <i class="fas fa-star"></i>
+                    Program Unggulan
+                </span>
+                <h2 class="text-xl sm:text-2xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+                    Program Tahfiz Kami
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
+                    Menghafal Al-Qur'an dengan metodologi yang sistematik dan berkesan
+                </p>
+            </div>
+            
+            {{-- Programs Grid --}}
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {{-- Program 1 --}}
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-emerald-500"></div>
+                    <div class="p-6 sm:p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                            <i class="fas fa-book-open text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Tahfiz 30 Juz</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            Program unggulan menghafal seluruh 30 juz Al-Qur'an dalam tempoh 3 tahun dengan bimbingan intensif dan muraja'ah berkala.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-primary-500"></i>
+                                Tempoh: 3 Tahun
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-primary-500"></i>
+                                Kelas Intensif Harian
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-primary-500"></i>
+                                Sijil Tahfiz
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 group-hover:gap-3 transition-all">
+                            Maklumat Lanjut <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <a href="{{ url('/berita') }}" class="hidden lg:inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white font-medium rounded-xl hover:bg-primary-700 transition text-sm">
+                
+                {{-- Program 2 --}}
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+                    <div class="p-6 sm:p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                            <i class="fas fa-mosque text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Kajian Kitab</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            Pembelajaran kitab-kitab kuning klasik dengan sanad yang bersambung kepada para ulama terdahulu secara tradisional.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-amber-500"></i>
+                                Kitab Turath
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-amber-500"></i>
+                                Sanad Bersambung
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-amber-500"></i>
+                                Ijazah Kitab
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 group-hover:gap-3 transition-all">
+                            Maklumat Lanjut <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                {{-- Program 3 --}}
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 sm:col-span-2 lg:col-span-1">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                    <div class="p-6 sm:p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                            <i class="fas fa-language text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-900 mb-3">Bahasa Arab</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            Penguasaan bahasa Arab secara aktif melalui kaedah moden untuk memahami Al-Qur'an dengan lebih mendalam.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-blue-500"></i>
+                                Nahu & Sorf
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-blue-500"></i>
+                                Perbualan Aktif
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-blue-500"></i>
+                                Balaghah
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 group-hover:gap-3 transition-all">
+                            Maklumat Lanjut <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ========================================
+         BERITA TERKINI - Content Section
+    ========================================= --}}
+    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-primary-50/50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            {{-- Section Header --}}
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 lg:mb-12">
+                <div>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">
+                        <i class="fas fa-newspaper"></i>
+                        Berita Terkini
+                    </span>
+                    <h2 class="text-xl sm:text-2xl lg:text-4xl font-extrabold text-gray-900">
+                        Kabar dari Matalib
+                    </h2>
+                </div>
+                <a href="{{ url('/berita') }}" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 hover:shadow-lg transition-all">
                     Lihat Semua <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-6">
+            {{-- News Grid --}}
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @php
                     $posts = \App\Models\Post::where('status', 'published')
                         ->orderBy('published_at', 'desc')
-                        ->limit(4)
+                        ->limit(3)
                         ->get();
                 @endphp
                 
                 @forelse($posts as $post)
-                <article class="bg-white rounded-lg lg:rounded-2xl overflow-hidden shadow-sm border border-gray-100 {{ $loop->index >= 2 ? 'hidden lg:block' : '' }}">
-                    @if($post->featured_image)
-                    <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
-                    </div>
-                    @else
-                    <div class="aspect-video bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                        <i class="fas fa-newspaper text-white text-xl lg:text-4xl opacity-50"></i>
-                    </div>
-                    @endif
-                    <div class="p-2 lg:p-5">
-                        <div class="flex items-center gap-1 lg:gap-2 text-[8px] lg:text-xs text-gray-500 mb-1 lg:mb-2">
-                            <span><i class="far fa-calendar mr-0.5"></i> {{ $post->published_at?->format('d M') }}</span>
-                            @if($post->category)
-                            <span class="px-1 lg:px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-[7px] lg:text-xs">{{ $post->category->name }}</span>
-                            @endif
+                <article class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-video overflow-hidden">
+                        @if($post->featured_image)
+                        <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        @else
+                        <div class="w-full h-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                            <i class="fas fa-newspaper text-white text-4xl opacity-50"></i>
                         </div>
-                        <h3 class="font-bold text-[10px] lg:text-lg text-gray-900 mb-1 lg:mb-2 line-clamp-2">{{ $post->title }}</h3>
-                        <a href="{{ url('/berita/' . $post->slug) }}" class="inline-flex items-center text-primary-600 font-medium text-[8px] lg:text-sm">
-                            Baca <i class="fas fa-arrow-right ml-1"></i>
+                        @endif
+                        @if($post->category)
+                        <span class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-primary-700 text-xs font-semibold rounded-full shadow-sm">
+                            {{ $post->category->name }}
+                        </span>
+                        @endif
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                            <span class="flex items-center gap-1">
+                                <i class="far fa-calendar"></i>
+                                {{ $post->published_at?->format('d M Y') }}
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="far fa-eye"></i>
+                                {{ $post->views_count ?? 0 }}
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors">
+                            {{ $post->title }}
+                        </h3>
+                        <p class="text-gray-600 text-sm line-clamp-2 mb-4">
+                            {{ $post->excerpt ?? Str::limit(strip_tags($post->content), 100) }}
+                        </p>
+                        <a href="{{ url('/berita/' . $post->slug) }}" class="inline-flex items-center gap-2 text-primary-600 font-semibold text-sm hover:gap-3 transition-all">
+                            Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </article>
                 @empty
-                <div class="col-span-full text-center py-8 lg:py-12">
-                    <div class="w-12 h-12 lg:w-20 lg:h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-4">
-                        <i class="fas fa-newspaper text-gray-400 text-lg lg:text-3xl"></i>
+                <div class="col-span-full text-center py-16">
+                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-newspaper text-gray-400 text-3xl"></i>
                     </div>
-                    <h3 class="font-semibold text-gray-900 mb-1 text-xs lg:text-base">Tiada Berita</h3>
-                    <p class="text-gray-500 text-[10px] lg:text-sm">Berita akan dikemas kini</p>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Tiada Berita</h3>
+                    <p class="text-gray-500 text-sm">Berita akan dikemas kini tidak lama lagi</p>
                 </div>
                 @endforelse
-            </div>
-            
-            <div class="text-center mt-4 lg:hidden">
-                <a href="{{ url('/berita') }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary-600 text-white font-medium rounded-lg transition text-[10px]">
-                    Lihat Semua <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
         </div>
     </section>
 
-    {{-- CTA Section --}}
-    <section class="max-w-7xl mx-auto px-3 lg:px-4 py-6 lg:py-16">
-        <div class="relative bg-gradient-to-r from-primary-600 via-primary-700 to-emerald-700 rounded-xl lg:rounded-3xl overflow-hidden">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-50"></div>
-            
-            <div class="relative px-4 py-5 lg:px-12 lg:py-16 text-center lg:text-left lg:flex items-center justify-between gap-8">
-                <div class="mb-4 lg:mb-0">
-                    <h2 class="text-sm lg:text-3xl font-bold text-white mb-1 lg:mb-3">Berminat Mendaftar?</h2>
-                    <p class="text-primary-100 text-[10px] lg:text-lg">Sertai program tahfiz kami sekarang</p>
-                </div>
-                <div class="flex gap-2 lg:gap-4 justify-center lg:justify-end">
-                    @php $whatsapp = \App\Models\Setting::get('social_whatsapp'); @endphp
-                    @if($whatsapp)
-                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank" class="inline-flex items-center justify-center gap-1 lg:gap-2 px-3 py-1.5 lg:px-6 lg:py-3 bg-green-500 text-white font-semibold rounded-lg lg:rounded-xl shadow-lg hover:bg-green-600 transition text-[10px] lg:text-base">
-                        <i class="fab fa-whatsapp text-xs lg:text-xl"></i> WhatsApp
-                    </a>
-                    @endif
-                    <a href="{{ url('/kontak') }}" class="inline-flex items-center justify-center gap-1 lg:gap-2 px-3 py-1.5 lg:px-6 lg:py-3 bg-white text-primary-700 font-semibold rounded-lg lg:rounded-xl shadow-lg hover:bg-gray-50 transition text-[10px] lg:text-base">
-                        <i class="fas fa-envelope text-[10px] lg:text-base"></i> Hubungi
-                    </a>
+    {{-- ========================================
+         CTA SECTION - Call to Action
+    ========================================= --}}
+    <section class="py-12 sm:py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="relative bg-gradient-to-r from-primary-600 via-primary-700 to-emerald-700 rounded-3xl overflow-hidden">
+                {{-- Background Pattern --}}
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSI+PGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjIiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50"></div>
+                
+                {{-- Decorative Elements --}}
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl"></div>
+                
+                <div class="relative px-6 py-12 sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+                    <div class="lg:flex lg:items-center lg:justify-between gap-8">
+                        <div class="text-center lg:text-left mb-8 lg:mb-0">
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-4">
+                                Berminat Mendaftar?
+                            </h2>
+                            <p class="text-primary-100 text-sm sm:text-base lg:text-lg max-w-xl">
+                                Sertailah program tahfiz kami dan jadilah sebahagian daripada generasi penghafal Al-Qur'an yang berakhlak mulia.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-end">
+                            @php $whatsapp = \App\Models\Setting::get('social_whatsapp'); @endphp
+                            @if($whatsapp)
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank" class="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-green-500 text-white font-bold rounded-xl shadow-lg hover:bg-green-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                <i class="fab fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                                <span>Hubungi via WhatsApp</span>
+                            </a>
+                            @endif
+                            <a href="{{ url('/kontak') }}" class="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-white text-primary-700 font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                <i class="fas fa-envelope group-hover:scale-110 transition-transform"></i>
+                                <span>Kirim Mesej</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
