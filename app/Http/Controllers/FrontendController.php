@@ -73,6 +73,7 @@ class FrontendController extends Controller
         if (auth()->check()) {
             return redirect('/admin');
         }
-        return view('frontend.login');
+        // Redirect to Filament login
+        return redirect('/admin/login');
     }
 }
