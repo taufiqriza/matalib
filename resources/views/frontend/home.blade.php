@@ -95,9 +95,92 @@
     </section>
 
     {{-- ========================================
+         MOTO MADRASAH - Berilmu Berakhlak Berjihad
+    ========================================= --}}
+    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
+        {{-- Decorative --}}
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-100 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-amber-100 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+            {{-- Section Header --}}
+            <div class="text-center mb-10 lg:mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 text-sm font-semibold rounded-full mb-4">
+                    <i class="fas fa-star"></i>
+                    Moto Madrasah
+                </span>
+                <h2 class="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+                    <span class="text-primary-600">Berilmu</span>, 
+                    <span class="text-amber-600">Berakhlak</span> dan 
+                    <span class="text-emerald-600">Berjihad</span>
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto">
+                    Moto yang membawa makna mendalam dan saling melengkapi dalam membentuk insan yang cemerlang dunia dan akhirat
+                </p>
+            </div>
+            
+            {{-- Moto Cards --}}
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                {{-- Berilmu --}}
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary-200 transition-all duration-500 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                            <i class="fas fa-book-open text-white text-3xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4">Berilmu</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Sentiasa <strong>menuntut, menguasai dan mengamalkan</strong> ilmu pengetahuan. Ilmu menjadi asas dalam membuat keputusan yang betul, membezakan antara yang hak dan batil, serta membentuk pemikiran yang matang dan berwawasan.
+                        </p>
+                    </div>
+                </div>
+                
+                {{-- Berakhlak --}}
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-amber-200 transition-all duration-500 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                            <i class="fas fa-heart text-white text-3xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4">Berakhlak</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Pembentukan <strong>sahsiah dan tingkah laku yang mulia</strong>, seperti jujur, amanah, berdisiplin, hormat-menghormati dan bertanggungjawab. Ilmu yang dimiliki perlu disertai dengan akhlak yang baik.
+                        </p>
+                    </div>
+                </div>
+                
+                {{-- Berjihad --}}
+                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-emerald-200 transition-all duration-500 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                            <i class="fas fa-fist-raised text-white text-3xl"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl text-gray-900 mb-4">Berjihad</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong>Kesungguhan, pengorbanan dan usaha berterusan</strong> dalam menegakkan kebenaran, memperbaiki diri, berkhidmat kepada masyarakat serta mempertahankan agama, bangsa dan negara.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            {{-- Quote --}}
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-primary-50 via-amber-50 to-emerald-50 rounded-2xl border border-primary-100">
+                    <i class="fas fa-quote-left text-primary-400 text-xl"></i>
+                    <p class="text-gray-700 font-medium italic">
+                        Keseimbangan antara kecerdasan intelek, kemuliaan akhlak dan kesungguhan berjuang demi kebaikan sejagat
+                    </p>
+                    <i class="fas fa-quote-right text-primary-400 text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ========================================
          KENAPA PILIH KAMI - Trust Building
     ========================================= --}}
-    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-primary-50 to-white">
+    <section class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             {{-- Section Header --}}
             <div class="text-center mb-10 lg:mb-16">
@@ -133,13 +216,13 @@
                     <p class="text-gray-600 text-sm">Dibimbing oleh para huffaz yang telah hafal 30 juz dengan sanad bersambung</p>
                 </div>
                 
-                {{-- Feature 3 --}}
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                        <i class="fas fa-home text-white text-xl"></i>
+                {{-- Feature 3 - CCTV Security --}}
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-red-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
                     </div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Kemudahan Lengkap</h3>
-                    <p class="text-gray-600 text-sm">Asrama selesa, dewan solat luas, dan persekitaran yang tenang untuk belajar</p>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Keselamatan CCTV</h3>
+                    <p class="text-gray-600 text-sm">Pergerakan dan aktiviti dikawal CCTV 24 jam untuk keselamatan pelajar</p>
                 </div>
                 
                 {{-- Feature 4 --}}
@@ -149,6 +232,125 @@
                     </div>
                     <h3 class="font-bold text-lg text-gray-900 mb-2">Sijil Diiktiraf</h3>
                     <p class="text-gray-600 text-sm">Pelajar menerima sijil tahfiz yang diiktiraf selepas menamatkan hafalan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ========================================
+         AKTIVITI SUNNAH & KOKURIKULUM
+    ========================================= --}}
+    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-emerald-900 text-white relative overflow-hidden">
+        {{-- Pattern --}}
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiPjxwYXRoIGQ9Ik0zNiAxOGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptMCAyMGMtNC40MTggMC04LTMuNTgyLTgtOHMzLjU4Mi04IDgtOCA4IDMuNTgyIDggOC0zLjU4MiA4LTggOHoiLz48L2c+PC9nPjwvc3ZnPg==')]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                {{-- Aktiviti Sunnah --}}
+                <div>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-full mb-6">
+                        <i class="fas fa-sun"></i>
+                        Aktiviti Sunnah Mingguan
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-6">
+                        Sunnah Yang <span class="text-amber-400">Menarik</span>
+                    </h2>
+                    <p class="text-primary-200 mb-8">
+                        Mengikuti sunnah Rasulullah ﷺ melalui aktiviti mingguan yang sihat dan menyeronokkan
+                    </p>
+                    
+                    <div class="space-y-4">
+                        {{-- Berenang --}}
+                        <div class="group flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/20 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-swimming-pool text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl text-white mb-1">Berenang</h3>
+                                <p class="text-primary-200 text-sm">Aktiviti sunnah untuk kekuatan fizikal dan mental</p>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="px-3 py-1 bg-blue-500/30 text-blue-200 text-xs font-semibold rounded-full">Sunnah</span>
+                            </div>
+                        </div>
+                        
+                        {{-- Memanah --}}
+                        <div class="group flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/20 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-bullseye text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl text-white mb-1">Memanah</h3>
+                                <p class="text-primary-200 text-sm">Melatih fokus, ketepatan dan kesabaran</p>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="px-3 py-1 bg-amber-500/30 text-amber-200 text-xs font-semibold rounded-full">Sunnah</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {{-- Kokurikulum --}}
+                <div>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-full mb-6">
+                        <i class="fas fa-medal"></i>
+                        Kokurikulum
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-6">
+                        Seni Bela Diri <span class="text-emerald-400">Islami</span>
+                    </h2>
+                    <p class="text-primary-200 mb-8">
+                        Membentuk pelajar yang kuat jasad, kukuh iman dan berdisiplin tinggi
+                    </p>
+                    
+                    <div class="space-y-4">
+                        {{-- Silat --}}
+                        <div class="group flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/20 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-hand-fist text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl text-white mb-1">Silat</h3>
+                                <p class="text-primary-200 text-sm">Seni bela diri warisan Melayu dengan nilai-nilai Islam</p>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="px-3 py-1 bg-red-500/30 text-red-200 text-xs font-semibold rounded-full">Tradisi</span>
+                            </div>
+                        </div>
+                        
+                        {{-- Taekwondo --}}
+                        <div class="group flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/20 transition-all duration-300">
+                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-user-ninja text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl text-white mb-1">Taekwondo</h3>
+                                <p class="text-primary-200 text-sm">Disiplin, ketangkasan dan kecergasan fizikal</p>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="px-3 py-1 bg-indigo-500/30 text-indigo-200 text-xs font-semibold rounded-full">Sukan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {{-- Security Banner --}}
+            <div class="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8">
+                <div class="flex flex-col lg:flex-row items-center gap-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center shadow-xl">
+                        <i class="fas fa-video text-white text-3xl"></i>
+                    </div>
+                    <div class="text-center lg:text-left flex-grow">
+                        <h3 class="font-bold text-2xl text-white mb-2">Sistem Keselamatan Yang Baik</h3>
+                        <p class="text-primary-200">
+                            Pergerakan dan aktiviti pelajar dikawal <strong class="text-white">CCTV 24 jam</strong> untuk memastikan keselamatan dan keselesaan sepanjang berada di madrasah
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                        <span class="text-white font-semibold">Live 24/7</span>
+                    </div>
                 </div>
             </div>
         </div>

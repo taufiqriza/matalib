@@ -18,7 +18,47 @@
                 <p class="text-gray-500 text-xs sm:text-sm">Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang</p>
             </div>
             
+            {{-- Content --}}
             <div class="prose prose-sm sm:prose-base lg:prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700">
+                
+                {{-- MOTO MADRASAH --}}
+                <h2 class="text-xl sm:text-2xl font-bold text-primary-700 flex items-center gap-3">
+                    <span class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-star text-amber-600 text-sm sm:text-base"></i>
+                    </span>
+                    Moto Madrasah
+                </h2>
+                <div class="not-prose bg-gradient-to-r from-primary-50 via-amber-50 to-emerald-50 rounded-2xl p-6 sm:p-8 border border-primary-100 mb-8">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-center mb-6">
+                        <span class="text-primary-600">Berilmu</span>, 
+                        <span class="text-amber-600">Berakhlak</span> dan 
+                        <span class="text-emerald-600">Berjihad</span>
+                    </h3>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-emerald-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
+                                <i class="fas fa-book-open text-white text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Berilmu</h4>
+                            <p class="text-gray-600 text-xs">Menuntut, menguasai dan mengamalkan ilmu pengetahuan</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl mx-auto mb-3 flex items-center justify-center">
+                                <i class="fas fa-heart text-white text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Berakhlak</h4>
+                            <p class="text-gray-600 text-xs">Pembentukan sahsiah dan tingkah laku yang mulia</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl mx-auto mb-3 flex items-center justify-center">
+                                <i class="fas fa-fist-raised text-white text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Berjihad</h4>
+                            <p class="text-gray-600 text-xs">Kesungguhan dan usaha berterusan dalam kebaikan</p>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="text-xl sm:text-2xl font-bold text-primary-700 flex items-center gap-3">
                     <span class="w-8 h-8 sm:w-10 sm:h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
                         <i class="fas fa-bullseye text-primary-600 text-sm sm:text-base"></i>
@@ -77,6 +117,79 @@
                     <div class="bg-rose-50 rounded-xl p-4 sm:p-5 border border-rose-100">
                         <h4 class="font-bold text-rose-800 mb-1 text-sm sm:text-base">Tawadhu</h4>
                         <p class="text-gray-600 text-xs sm:text-sm">Rendah diri dalam sikap dan perbuatan</p>
+                    </div>
+                </div>
+
+                {{-- KESELAMATAN --}}
+                <h2 class="text-xl sm:text-2xl font-bold text-primary-700 flex items-center gap-3 mt-8 sm:mt-12">
+                    <span class="w-8 h-8 sm:w-10 sm:h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-shield-alt text-red-600 text-sm sm:text-base"></i>
+                    </span>
+                    Keselamatan
+                </h2>
+                <div class="not-prose bg-red-50 rounded-2xl p-5 sm:p-6 border border-red-100 flex items-center gap-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-video text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-1">Sistem Keselamatan CCTV 24 Jam</h4>
+                        <p class="text-gray-600 text-sm">Pergerakan dan aktiviti pelajar dikawal CCTV untuk memastikan keselamatan dan keselesaan sepanjang berada di madrasah</p>
+                    </div>
+                </div>
+
+                {{-- AKTIVITI SUNNAH --}}
+                <h2 class="text-xl sm:text-2xl font-bold text-primary-700 flex items-center gap-3 mt-8 sm:mt-12">
+                    <span class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-sun text-amber-600 text-sm sm:text-base"></i>
+                    </span>
+                    Aktiviti Sunnah Mingguan
+                </h2>
+                <div class="not-prose grid sm:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-blue-50 rounded-xl p-5 border border-blue-100 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-swimming-pool text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Berenang</h4>
+                            <p class="text-gray-600 text-sm">Aktiviti sunnah untuk kekuatan fizikal dan mental</p>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 rounded-xl p-5 border border-amber-100 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-bullseye text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Memanah</h4>
+                            <p class="text-gray-600 text-sm">Melatih fokus, ketepatan dan kesabaran</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- KOKURIKULUM --}}
+                <h2 class="text-xl sm:text-2xl font-bold text-primary-700 flex items-center gap-3 mt-8 sm:mt-12">
+                    <span class="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-medal text-indigo-600 text-sm sm:text-base"></i>
+                    </span>
+                    Kokurikulum - Seni Bela Diri
+                </h2>
+                <div class="not-prose grid sm:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-red-50 rounded-xl p-5 border border-red-100 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-hand-fist text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Silat</h4>
+                            <p class="text-gray-600 text-sm">Seni bela diri warisan Melayu dengan nilai-nilai Islam</p>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-100 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user-ninja text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Taekwondo</h4>
+                            <p class="text-gray-600 text-sm">Disiplin, ketangkasan dan kecergasan fizikal</p>
+                        </div>
                     </div>
                 </div>
             </div>
