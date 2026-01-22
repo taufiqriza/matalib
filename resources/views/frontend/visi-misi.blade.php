@@ -73,57 +73,34 @@
             {{-- Visi Card --}}
             <div class="mb-4 sm:mb-6">
                 <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-5 sm:p-6 border border-amber-100">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
-                            <i class="fas fa-bullseye text-white text-lg"></i>
+                    <div class="text-center sm:text-left sm:flex sm:items-start sm:gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg mx-auto sm:mx-0 mb-3 sm:mb-0 flex-shrink-0">
+                            <i class="fas fa-bullseye text-white text-xl"></i>
                         </div>
                         <div class="flex-1">
-                            <span class="inline-block px-2 py-0.5 bg-amber-500 text-white text-[10px] font-bold rounded mb-2">VISI</span>
-                            <h3 class="font-bold text-lg sm:text-xl text-gray-900 mb-2">Membina Generasi Al-Quran</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                Menjadi institusi pendidikan tahfiz Al-Qur'an yang cemerlang dalam melahirkan generasi hafiz yang berakhlak mulia dan bermanfaat kepada ummah.
-                            </p>
+                            <span class="inline-block px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full mb-3">VISI MADRASAH</span>
+                            <h3 class="font-extrabold text-xl sm:text-2xl text-gray-900 mb-2">Membina Generasi al-Quran</h3>
                         </div>
                     </div>
                 </div>
             </div>
 
             {{-- Misi Card --}}
-            <div class="bg-gradient-to-br from-primary-900 via-primary-800 to-emerald-900 rounded-2xl p-5 sm:p-6 text-white">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-flag text-white"></i>
-                    </div>
-                    <div>
-                        <span class="inline-block px-2 py-0.5 bg-cyan-500 text-white text-[10px] font-bold rounded">MISI</span>
-                        <p class="text-primary-200 text-xs mt-0.5">Pusat Pembentukan Generasi Ummah</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-white/10 rounded-xl p-3">
-                        <div class="w-8 h-8 bg-primary-500/50 rounded-lg flex items-center justify-center mb-2">
-                            <span class="text-white font-bold text-sm">1</span>
+            <div class="bg-gradient-to-br from-cyan-600 via-teal-600 to-emerald-700 rounded-2xl p-5 sm:p-6 text-white relative overflow-hidden">
+                {{-- Decorative --}}
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                
+                <div class="relative">
+                    <div class="text-center sm:text-left sm:flex sm:items-start sm:gap-4 mb-4">
+                        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto sm:mx-0 mb-3 sm:mb-0 flex-shrink-0">
+                            <i class="fas fa-flag text-white text-xl"></i>
                         </div>
-                        <p class="text-white text-xs font-medium">Program Tahfiz Berkesan</p>
-                    </div>
-                    <div class="bg-white/10 rounded-xl p-3">
-                        <div class="w-8 h-8 bg-amber-500/50 rounded-lg flex items-center justify-center mb-2">
-                            <span class="text-white font-bold text-sm">2</span>
+                        <div class="flex-1">
+                            <span class="inline-block px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full mb-3">MISI MADRASAH</span>
+                            <p class="text-white text-base sm:text-lg leading-relaxed font-medium">
+                                Menjadikan madrasah ini sebagai pusat pembentukan masyarakat yang sentiasa berpegang teguh kepada al-Quran dalam membentuk generasi ummah
+                            </p>
                         </div>
-                        <p class="text-white text-xs font-medium">Pembinaan Akhlak</p>
-                    </div>
-                    <div class="bg-white/10 rounded-xl p-3">
-                        <div class="w-8 h-8 bg-blue-500/50 rounded-lg flex items-center justify-center mb-2">
-                            <span class="text-white font-bold text-sm">3</span>
-                        </div>
-                        <p class="text-white text-xs font-medium">Ilmu Seimbang</p>
-                    </div>
-                    <div class="bg-white/10 rounded-xl p-3">
-                        <div class="w-8 h-8 bg-rose-500/50 rounded-lg flex items-center justify-center mb-2">
-                            <span class="text-white font-bold text-sm">4</span>
-                        </div>
-                        <p class="text-white text-xs font-medium">Pusat Kajian Al-Quran</p>
                     </div>
                 </div>
             </div>
