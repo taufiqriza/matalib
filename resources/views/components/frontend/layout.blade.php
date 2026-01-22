@@ -25,6 +25,33 @@
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     @endif
     
+    {{-- Open Graph Meta Tags for Social Sharing --}}
+    @php
+        $ogImage = asset('storage/' . $logo);
+        $ogUrl = url()->current();
+        $ogDescription = $siteTagline;
+    @endphp
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ $ogUrl }}">
+    <meta property="og:title" content="{{ $title ?? 'Laman Utama' }} - {{ $siteName }}">
+    <meta property="og:description" content="{{ $ogDescription }}">
+    <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="{{ $siteName }}">
+    <meta property="og:locale" content="ms_MY">
+    
+    {{-- Twitter Card Meta Tags --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title ?? 'Laman Utama' }} - {{ $siteName }}">
+    <meta name="twitter:description" content="{{ $ogDescription }}">
+    <meta name="twitter:image" content="{{ $ogImage }}">
+    
+    {{-- General Meta Tags --}}
+    <meta name="description" content="{{ $ogDescription }}">
+    <meta name="author" content="{{ $siteName }}">
+    <meta name="keywords" content="tahfiz, madrasah, quran, hafiz, matalib, melaka, pendidikan islam">
+    
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
