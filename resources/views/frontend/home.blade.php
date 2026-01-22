@@ -3,83 +3,83 @@
     {{-- ========================================
          HERO SECTION - Impak Visual Maksimum
     ========================================= --}}
-    <section class="relative overflow-hidden min-h-[50vh] lg:min-h-[70vh] flex items-center">
+    <section class="relative overflow-hidden min-h-[40vh] sm:min-h-[50vh] lg:min-h-[70vh] flex items-center">
         {{-- Background dengan Pattern --}}
         <div class="absolute inset-0 hero-gradient"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiPjxwYXRoIGQ9Ik0zNiAxOGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptMCAyMGMtNC40MTggMC04LTMuNTgyLTgtOHMzLjU4Mi04IDgtOCA4IDMuNTgyIDggOC0zLjU4MiA4LTggOHoiLz48L2c+PC9nPjwvc3ZnPg==')]"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDMiPjxwYXRoIGQ9Ik0zNiAxOGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptMCAyMGMtNC40MTggMC04LTMuNTgyLTgtOHMzLjU4Mi04IDgtOCA4IDMuNTgyIDggOC0zLjU4MiA4LTggOHoiLz48L2c+PC9nPjwvc3ZnPg==')]"></div>
         
-        <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-20">
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="relative w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
                 
                 {{-- Konten Utama --}}
                 <div class="text-center lg:text-left order-2 lg:order-1">
                     {{-- Bismillah --}}
-                    <div class="mb-6">
-                        <p class="arabic-text text-xl sm:text-2xl lg:text-4xl text-white/80 mb-2">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-                        <p class="text-primary-200 text-xs sm:text-sm">Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang</p>
+                    <div class="mb-4 sm:mb-6">
+                        <p class="arabic-text text-lg sm:text-xl lg:text-3xl text-white/70 mb-1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                        <p class="text-primary-200 text-[10px] sm:text-xs">Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang</p>
                     </div>
                     
                     {{-- Tajuk Utama --}}
-                    <h1 class="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 lg:mb-6 leading-tight">
+                    <h1 class="text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-extrabold text-white mb-3 lg:mb-5 leading-tight">
                         Selamat Datang ke
                         <span class="block text-accent-400 mt-1">{{ \App\Models\Setting::get('site_name', 'Matalib') }}</span>
                     </h1>
                     
                     {{-- Tagline --}}
-                    <p class="text-sm sm:text-base lg:text-xl text-primary-100 mb-6 lg:mb-8 max-w-xl mx-auto lg:mx-0">
+                    <p class="text-xs sm:text-sm lg:text-lg text-primary-100 mb-4 lg:mb-6 max-w-xl mx-auto lg:mx-0">
                         {{ \App\Models\Setting::get('site_tagline', 'Madrasah Tahfiz Al Qur\'an Ibnu Talib') }}
                     </p>
                     
                     {{-- CTA Buttons --}}
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                        <a href="{{ url('/tentang') }}" class="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-white text-primary-700 font-bold rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                            <i class="fas fa-info-circle group-hover:rotate-12 transition-transform"></i>
-                            <span>Tentang Kami</span>
+                    <div class="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start">
+                        <a href="{{ url('/tentang') }}" class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-6 sm:py-3 bg-white text-primary-700 font-semibold rounded-xl shadow-lg text-sm sm:text-base">
+                            <i class="fas fa-info-circle text-xs sm:text-sm"></i>
+                            <span>Tentang</span>
                         </a>
-                        <a href="{{ url('/kontak') }}" class="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-primary-500/30 text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white hover:text-primary-700 transition-all duration-300">
-                            <i class="fas fa-envelope group-hover:scale-110 transition-transform"></i>
-                            <span>Hubungi Kami</span>
+                        <a href="{{ url('/kontak') }}" class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-6 sm:py-3 bg-white/20 text-white font-semibold rounded-xl border border-white/30 text-sm sm:text-base">
+                            <i class="fas fa-envelope text-xs sm:text-sm"></i>
+                            <span>Hubungi</span>
                         </a>
                     </div>
                 </div>
                 
-                {{-- Statistik Kad --}}
+                {{-- Statistik Kad - Compact --}}
                 <div class="order-1 lg:order-2">
-                    <div class="grid grid-cols-2 gap-3 sm:gap-4 max-w-md mx-auto lg:max-w-none">
+                    <div class="grid grid-cols-2 gap-2 sm:gap-3 max-w-sm mx-auto lg:max-w-none">
                         {{-- Stat 1 --}}
-                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                                <i class="fas fa-book-quran text-white text-lg sm:text-2xl"></i>
+                        <div class="glass-card rounded-xl p-3 sm:p-4 text-center">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 shadow-md">
+                                <i class="fas fa-book-quran text-white text-sm sm:text-lg"></i>
                             </div>
-                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">30</h3>
-                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Juz Al-Quran</p>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900">30</h3>
+                            <p class="text-gray-600 text-[10px] sm:text-xs font-medium">Juz Al-Quran</p>
                         </div>
                         
                         {{-- Stat 2 --}}
-                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                                <i class="fas fa-user-graduate text-white text-lg sm:text-2xl"></i>
+                        <div class="glass-card rounded-xl p-3 sm:p-4 text-center">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 shadow-md">
+                                <i class="fas fa-user-graduate text-white text-sm sm:text-lg"></i>
                             </div>
-                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">100<span class="text-primary-500">+</span></h3>
-                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Pelajar Aktif</p>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900">100<span class="text-primary-500">+</span></h3>
+                            <p class="text-gray-600 text-[10px] sm:text-xs font-medium">Pelajar Aktif</p>
                         </div>
                         
                         {{-- Stat 3 --}}
-                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                                <i class="fas fa-chalkboard-teacher text-white text-lg sm:text-2xl"></i>
+                        <div class="glass-card rounded-xl p-3 sm:p-4 text-center">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 shadow-md">
+                                <i class="fas fa-chalkboard-teacher text-white text-sm sm:text-lg"></i>
                             </div>
-                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">20<span class="text-primary-500">+</span></h3>
-                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Guru & Ustaz</p>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900">20<span class="text-primary-500">+</span></h3>
+                            <p class="text-gray-600 text-[10px] sm:text-xs font-medium">Guru & Ustaz</p>
                         </div>
                         
                         {{-- Stat 4 --}}
-                        <div class="glass-card rounded-2xl p-4 sm:p-6 text-center group hover:scale-105 transition-transform duration-300">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-rose-400 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
-                                <i class="fas fa-award text-white text-lg sm:text-2xl"></i>
+                        <div class="glass-card rounded-xl p-3 sm:p-4 text-center">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-rose-400 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-2 shadow-md">
+                                <i class="fas fa-award text-white text-sm sm:text-lg"></i>
                             </div>
-                            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900">50<span class="text-primary-500">+</span></h3>
-                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Hafiz Lulus</p>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900">50<span class="text-primary-500">+</span></h3>
+                            <p class="text-gray-600 text-[10px] sm:text-xs font-medium">Hafiz Lulus</p>
                         </div>
                     </div>
                 </div>
@@ -97,81 +97,54 @@
     {{-- ========================================
          MOTO MADRASAH - Berilmu Berakhlak Berjihad
     ========================================= --}}
-    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
-        {{-- Decorative --}}
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-100 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-amber-100 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl opacity-50"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+    <section class="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative">
             {{-- Section Header --}}
-            <div class="text-center mb-10 lg:mb-16">
-                <span class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 text-sm font-semibold rounded-full mb-4">
-                    <i class="fas fa-star"></i>
+            <div class="text-center mb-6 sm:mb-10">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full mb-3">
+                    <i class="fas fa-star text-[10px]"></i>
                     Moto Madrasah
                 </span>
-                <h2 class="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+                <h2 class="text-xl sm:text-2xl lg:text-4xl font-extrabold text-gray-900 mb-3">
                     <span class="text-primary-600">Berilmu</span>, 
-                    <span class="text-amber-600">Berakhlak</span> dan 
+                    <span class="text-amber-600">Berakhlak</span>, 
                     <span class="text-emerald-600">Berjihad</span>
                 </h2>
-                <p class="text-gray-600 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto">
-                    Moto yang membawa makna mendalam dan saling melengkapi dalam membentuk insan yang cemerlang dunia dan akhirat
-                </p>
             </div>
             
-            {{-- Moto Cards --}}
-            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {{-- Moto Cards - Compact Mobile --}}
+            <div class="space-y-3 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-4">
                 {{-- Berilmu --}}
-                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary-200 transition-all duration-500 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div class="relative">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                            <i class="fas fa-book-open text-white text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-gray-900 mb-4">Berilmu</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Sentiasa <strong>menuntut, menguasai dan mengamalkan</strong> ilmu pengetahuan. Ilmu menjadi asas dalam membuat keputusan yang betul, membezakan antara yang hak dan batil, serta membentuk pemikiran yang matang dan berwawasan.
-                        </p>
+                <div class="flex sm:flex-col items-center gap-3 sm:gap-0 bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-md flex-shrink-0 sm:mb-3 sm:mx-auto">
+                        <i class="fas fa-book-open text-white text-lg sm:text-xl"></i>
+                    </div>
+                    <div class="sm:text-center flex-1">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-0.5">Berilmu</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">Menuntut & mengamalkan ilmu pengetahuan</p>
                     </div>
                 </div>
                 
                 {{-- Berakhlak --}}
-                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-amber-200 transition-all duration-500 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div class="relative">
-                        <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                            <i class="fas fa-heart text-white text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-gray-900 mb-4">Berakhlak</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Pembentukan <strong>sahsiah dan tingkah laku yang mulia</strong>, seperti jujur, amanah, berdisiplin, hormat-menghormati dan bertanggungjawab. Ilmu yang dimiliki perlu disertai dengan akhlak yang baik.
-                        </p>
+                <div class="flex sm:flex-col items-center gap-3 sm:gap-0 bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-md flex-shrink-0 sm:mb-3 sm:mx-auto">
+                        <i class="fas fa-heart text-white text-lg sm:text-xl"></i>
+                    </div>
+                    <div class="sm:text-center flex-1">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-0.5">Berakhlak</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">Sahsiah & tingkah laku yang mulia</p>
                     </div>
                 </div>
                 
                 {{-- Berjihad --}}
-                <div class="group bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-emerald-200 transition-all duration-500 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div class="relative">
-                        <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                            <i class="fas fa-fist-raised text-white text-3xl"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-gray-900 mb-4">Berjihad</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            <strong>Kesungguhan, pengorbanan dan usaha berterusan</strong> dalam menegakkan kebenaran, memperbaiki diri, berkhidmat kepada masyarakat serta mempertahankan agama, bangsa dan negara.
-                        </p>
+                <div class="flex sm:flex-col items-center gap-3 sm:gap-0 bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-md flex-shrink-0 sm:mb-3 sm:mx-auto">
+                        <i class="fas fa-fist-raised text-white text-lg sm:text-xl"></i>
                     </div>
-                </div>
-            </div>
-            
-            {{-- Quote --}}
-            <div class="mt-12 text-center">
-                <div class="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-primary-50 via-amber-50 to-emerald-50 rounded-2xl border border-primary-100">
-                    <i class="fas fa-quote-left text-primary-400 text-xl"></i>
-                    <p class="text-gray-700 font-medium italic">
-                        Keseimbangan antara kecerdasan intelek, kemuliaan akhlak dan kesungguhan berjuang demi kebaikan sejagat
-                    </p>
-                    <i class="fas fa-quote-right text-primary-400 text-xl"></i>
+                    <div class="sm:text-center flex-1">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-0.5">Berjihad</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed">Usaha berterusan dalam kebaikan</p>
+                    </div>
                 </div>
             </div>
         </div>
