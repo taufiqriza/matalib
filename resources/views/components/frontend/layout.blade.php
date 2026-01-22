@@ -330,6 +330,9 @@
                     <a href="{{ url('/tentang') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('tentang') ? 'bg-white/15' : '' }}">
                         <i class="fas fa-info-circle text-xs"></i> Tentang Kami
                     </a>
+                    <a href="{{ url('/visi-misi') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('visi-misi') ? 'bg-white/15' : '' }}">
+                        <i class="fas fa-bullseye text-xs"></i> Visi & Misi
+                    </a>
                     <a href="{{ url('/kontak') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('kontak') ? 'bg-white/15' : '' }}">
                         <i class="fas fa-envelope text-xs"></i> Hubungi
                     </a>
@@ -396,6 +399,7 @@
                         <li><a href="{{ url('/berita') }}" class="text-primary-300 hover:text-white transition text-sm">Berita</a></li>
                         <li><a href="{{ url('/galeri') }}" class="text-primary-300 hover:text-white transition text-sm">Galeri</a></li>
                         <li><a href="{{ url('/tentang') }}" class="text-primary-300 hover:text-white transition text-sm">Tentang Kami</a></li>
+                        <li><a href="{{ url('/visi-misi') }}" class="text-primary-300 hover:text-white transition text-sm">Visi & Misi</a></li>
                         <li><a href="{{ url('/kontak') }}" class="text-primary-300 hover:text-white transition text-sm">Hubungi Kami</a></li>
                     </ul>
                 </div>
@@ -473,6 +477,9 @@
                 </button>
             </div>
             <div class="space-y-1">
+                <a href="{{ url('/visi-misi') }}" class="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-primary-50 rounded-lg transition text-xs">
+                    <i class="fas fa-bullseye w-4 text-primary-600"></i> Visi & Misi
+                </a>
                 <a href="{{ url('/kontak') }}" class="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-primary-50 rounded-lg transition text-xs">
                     <i class="fas fa-envelope w-4 text-primary-600"></i> Hubungi Kami
                 </a>

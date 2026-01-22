@@ -57,6 +57,11 @@ class FrontendController extends Controller
         return view('frontend.tentang');
     }
 
+    public function visiMisi()
+    {
+        return view('frontend.visi-misi');
+    }
+
     public function kontak()
     {
         return view('frontend.kontak');
