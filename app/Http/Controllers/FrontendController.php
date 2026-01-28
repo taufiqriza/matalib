@@ -62,6 +62,11 @@ class FrontendController extends Controller
         return view('frontend.visi-misi');
     }
 
+    public function statistik()
+    {
+        return view('frontend.statistik');
+    }
+
     public function kontak()
     {
         return view('frontend.kontak');

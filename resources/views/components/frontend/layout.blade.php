@@ -348,21 +348,44 @@
                     <a href="{{ url('/') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('/') ? 'bg-white/15' : '' }}">
                         <i class="fas fa-home text-xs"></i> Laman Utama
                     </a>
-                    <a href="{{ url('/berita') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('berita*') ? 'bg-white/15' : '' }}">
-                        <i class="fas fa-newspaper text-xs"></i> Berita
-                    </a>
-                    <a href="{{ url('/galeri') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('galeri*') ? 'bg-white/15' : '' }}">
-                        <i class="fas fa-images text-xs"></i> Galeri
-                    </a>
-                    <a href="{{ url('/tentang') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('tentang') ? 'bg-white/15' : '' }}">
-                        <i class="fas fa-info-circle text-xs"></i> Tentang Kami
-                    </a>
-                    <a href="{{ url('/visi-misi') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('visi-misi') ? 'bg-white/15' : '' }}">
-                        <i class="fas fa-bullseye text-xs"></i> Visi & Misi
-                    </a>
+
+                    {{-- Profil Dropdown --}}
+                    <div class="relative group">
+                        <button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('tentang*') || request()->is('visi-misi*') || request()->is('statistik*') ? 'bg-white/15' : '' }}">
+                            <i class="fas fa-user-circle text-xs"></i> Profil
+                            <i class="fas fa-chevron-down text-[10px] opacity-70 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 overflow-hidden z-50">
+                            <a href="{{ url('/tentang') }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition border-b border-gray-50 last:border-0">
+                                <i class="fas fa-info-circle w-5 text-gray-400"></i> Tentang Kami
+                            </a>
+                            <a href="{{ url('/visi-misi') }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition border-b border-gray-50 last:border-0">
+                                <i class="fas fa-bullseye w-5 text-gray-400"></i> Visi & Misi
+                            </a>
+                            <a href="{{ url('/statistik') }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition border-b border-gray-50 last:border-0">
+                                <i class="fas fa-chart-pie w-5 text-gray-400"></i> Statistik
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Media Dropdown --}}
+                    <div class="relative group">
+                        <button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('berita*') || request()->is('galeri*') ? 'bg-white/15' : '' }}">
+                            <i class="fas fa-photo-video text-xs"></i> Media
+                            <i class="fas fa-chevron-down text-[10px] opacity-70 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 overflow-hidden z-50">
+                            <a href="{{ url('/berita') }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition border-b border-gray-50 last:border-0">
+                                <i class="fas fa-newspaper w-5 text-gray-400"></i> Berita
+                            </a>
+                            <a href="{{ url('/galeri') }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition border-b border-gray-50 last:border-0">
+                                <i class="fas fa-images w-5 text-gray-400"></i> Galeri
+                            </a>
+                        </div>
+                    </div>
+
                     <a href="{{ url('/kontak') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-lg transition {{ request()->is('kontak') ? 'bg-white/15' : '' }}">
                         <i class="fas fa-envelope text-xs"></i> Hubungi
-                    </a>
                 </nav>
 
                 <a href="{{ url('/admin/login') }}" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-700 bg-white hover:bg-gray-50 rounded-xl shadow-sm transition">
@@ -427,6 +450,7 @@
                         <li><a href="{{ url('/galeri') }}" class="text-primary-300 hover:text-white transition text-sm">Galeri</a></li>
                         <li><a href="{{ url('/tentang') }}" class="text-primary-300 hover:text-white transition text-sm">Tentang Kami</a></li>
                         <li><a href="{{ url('/visi-misi') }}" class="text-primary-300 hover:text-white transition text-sm">Visi & Misi</a></li>
+                        <li><a href="{{ url('/statistik') }}" class="text-primary-300 hover:text-white transition text-sm">Statistik</a></li>
                         <li><a href="{{ url('/kontak') }}" class="text-primary-300 hover:text-white transition text-sm">Hubungi Kami</a></li>
                     </ul>
                 </div>
@@ -506,6 +530,9 @@
             <div class="space-y-1">
                 <a href="{{ url('/visi-misi') }}" class="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-primary-50 rounded-lg transition text-xs">
                     <i class="fas fa-bullseye w-4 text-primary-600"></i> Visi & Misi
+                </a>
+                <a href="{{ url('/statistik') }}" class="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-primary-50 rounded-lg transition text-xs">
+                    <i class="fas fa-chart-pie w-4 text-primary-600"></i> Statistik
                 </a>
                 <a href="{{ url('/kontak') }}" class="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-primary-50 rounded-lg transition text-xs">
                     <i class="fas fa-envelope w-4 text-primary-600"></i> Hubungi Kami
