@@ -35,6 +35,72 @@ class Post extends Model
         'gallery_images' => 'array',
     ];
 
+    protected static function booted(): void
+    {
+        static::saving(function (Post $post) {
+            // Convert Featured Image
+            if ($post->isDirty('featured_image') && $post->featured_image) {
+                $post->featured_image = self::convertToWebp($post->featured_image);
+            }
+
+            // Convert Gallery Images
+            if ($post->isDirty('gallery_images') && is_array($post->gallery_images)) {
+                $newGallery = [];
+                foreach ($post->gallery_images as $image) {
+                    $newGallery[] = self::convertToWebp($image);
+                }
+                $post->gallery_images = $newGallery;
+            }
+        });
+    }
+
+    private static function convertToWebp(?string $path): string
+    {
+        if (!$path || str_ends_with(strtolower($path), '.webp')) {
+            return $path ?? '';
+        }
+
+        $disk = \Illuminate\Support\Facades\Storage::disk('public');
+        
+        if (!$disk->exists($path)) {
+            return $path;
+        }
+
+        try {
+            $content = $disk->get($path);
+            $image = @imagecreatefromstring($content);
+            if (!$image) return $path;
+
+            // Handle transparency for PNG
+            imagepalettetotruecolor($image);
+            imagealphablending($image, true);
+            imagesavealpha($image, true);
+
+            $newPath = preg_replace('/\.(jpg|jpeg|png|gif)$/i', '.webp', $path);
+            
+            // Output to buffer
+            ob_start();
+            imagewebp($image, null, 80); // Quality 80
+            $webpData = ob_get_contents();
+            ob_end_clean();
+            
+            imagedestroy($image);
+
+            // Save new file
+            $disk->put($newPath, $webpData);
+            
+            // Delete old file if different
+            if ($path !== $newPath) {
+                $disk->delete($path);
+            }
+
+            return $newPath;
+        } catch (\Exception $e) {
+            // Log error or just return original path
+            return $path;
+        }
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
