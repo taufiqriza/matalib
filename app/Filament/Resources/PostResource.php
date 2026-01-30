@@ -155,7 +155,9 @@ class PostResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->description(fn (Post $record) => Str::limit($record->excerpt, 50))
-                    ->wrap(),
+                    ->wrap()
+                    ->weight('bold')
+                    ->extraAttributes(['style' => 'min-width: 350px;']),
 
                 Tables\Columns\TextColumn::make('author.name')
                     ->label('Author')
@@ -182,7 +184,7 @@ class PostResource extends Resource
                 Tables\Columns\TextColumn::make('views_count')
                     ->label('Views')
                     ->sortable()
-                    ->toggleable(),
+                    ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('published_at')
                     ->dateTime()
