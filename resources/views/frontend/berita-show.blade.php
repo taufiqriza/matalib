@@ -139,22 +139,44 @@
                         </div>
 
                             
-                            {{-- Image Gallery / Slideshow --}}
+                            {{-- Image Gallery / Slideshow (With Lightbox) --}}
                             @if($post->gallery_images && count($post->gallery_images) > 0)
-                            <div class="mt-8 mb-8">
+                            <div class="mt-8 mb-8" x-data="{ showModal: false, activeImage: '' }">
                                 <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 px-6 sm:px-10">Galeri Foto</h3>
                                 
                                 {{-- Scrollable Container (Native App Feel) --}}
                                 <div class="flex overflow-x-auto gap-4 px-6 sm:px-10 pb-6 hide-scrollbar snap-x snap-mandatory">
                                     @foreach($post->gallery_images as $image)
-                                    <div class="snap-center flex-shrink-0 w-64 sm:w-80 rounded-2xl overflow-hidden shadow-md bg-gray-100 border border-gray-100 relative group">
+                                    <div class="snap-center flex-shrink-0 w-64 sm:w-80 rounded-2xl overflow-hidden shadow-md bg-gray-100 border border-gray-100 relative group cursor-pointer"
+                                         @click="showModal = true; activeImage = '{{ asset('storage/' . $image) }}'">
                                         <div class="aspect-[4/3]">
-                                            <a href="{{ asset('storage/' . $image) }}" target="_blank">
-                                                <img src="{{ asset('storage/' . $image) }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                                            </a>
+                                            <img src="{{ asset('storage/' . $image) }}" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition flex items-center justify-center">
+                                                <i class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 transition transform scale-50 group-hover:scale-100"></i>
+                                            </div>
                                         </div>
                                     </div>
                                     @endforeach
+                                </div>
+
+                                {{-- Lightbox Modal --}}
+                                <div x-show="showModal" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0"
+                                     x-transition:enter-end="opacity-100"
+                                     x-transition:leave="transition ease-in duration-200"
+                                     x-transition:leave-start="opacity-100"
+                                     x-transition:leave-end="opacity-0"
+                                     class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+                                     @click.self="showModal = false"
+                                     style="display: none;">
+                                    
+                                    <div class="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center">
+                                        <button @click="showModal = false" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition">
+                                            <i class="fas fa-times text-2xl"></i>
+                                        </button>
+                                        <img :src="activeImage" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain">
+                                    </div>
                                 </div>
                             </div>
                             @endif

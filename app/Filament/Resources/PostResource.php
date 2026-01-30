@@ -77,8 +77,14 @@ class PostResource extends Resource
                                     ->multiple()
                                     ->reorderable()
                                     ->imageEditor()
+                                    ->imageResizeMode('cover')
+                                    ->imageCropAspectRatio('4:3')
+                                    ->imageResizeTargetWidth('1200')
+                                    ->imageResizeTargetHeight('900')
+                                    ->optimize('webp') // Convert to WebP for better compression
+                                    ->maxSize(10240) // Allow up to 10MB upload, but it will be compressed
                                     ->columnSpanFull()
-                                    ->helperText('Upload multiple images for the post gallery/slider.'),
+                                    ->helperText('Upload multiple images. They will be automatically compressed and optimized.'),
                             ])
                             ->collapsed(),
                     ])
