@@ -67,6 +67,20 @@ class PostResource extends Resource
                             ])
                             ->columns(2)
                             ->collapsed(),
+
+                        Forms\Components\Section::make('Image Gallery')
+                            ->schema([
+                                Forms\Components\FileUpload::make('gallery_images')
+                                    ->label('Gallery Images')
+                                    ->image()
+                                    ->directory('posts/gallery')
+                                    ->multiple()
+                                    ->reorderable()
+                                    ->imageEditor()
+                                    ->columnSpanFull()
+                                    ->helperText('Upload multiple images for the post gallery/slider.'),
+                            ])
+                            ->collapsed(),
                     ])
                     ->columnSpan(['lg' => 2]),
 

@@ -17,6 +17,7 @@ class Post extends Model
         'content',
         'excerpt',
         'featured_image',
+        'gallery_images',
         'category_id',
         'author_id',
         'status',
@@ -31,6 +32,7 @@ class Post extends Model
         'is_featured' => 'boolean',
         'views_count' => 'integer',
         'published_at' => 'datetime',
+        'gallery_images' => 'array',
     ];
 
     public function category(): BelongsTo
