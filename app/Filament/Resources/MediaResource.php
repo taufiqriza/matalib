@@ -73,8 +73,29 @@ class MediaResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $isGrid = request()->query('view', 'grid') === 'grid';
+
         return $table
-            ->columns([
+            ->contentGrid($isGrid ? [
+                'md' => 4,
+                'xl' => 6,
+            ] : null)
+            ->columns($isGrid ? [
+                Tables\Columns\Layout\Stack::make([
+                    Tables\Columns\ImageColumn::make('path')
+                        ->height('100%')
+                        ->width('100%')
+                        ->disk('public')
+                        ->extraImgAttributes(['class' => 'object-cover w-full h-48 rounded-lg']),
+                    Tables\Columns\TextColumn::make('name')
+                        ->weight('bold')
+                        ->limit(20)
+                        ->tooltip(fn ($record) => $record->name),
+                    Tables\Columns\TextColumn::make('human_size')
+                        ->color('gray')
+                        ->size('xs'),
+                ])->space(3),
+            ] : [
                 Tables\Columns\ImageColumn::make('path')
                     ->label('Preview')
                     ->disk('public')
