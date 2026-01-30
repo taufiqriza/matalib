@@ -52,6 +52,44 @@ class Post extends Model
                 $post->gallery_images = $newGallery;
             }
         });
+
+        static::saved(function (Post $post) {
+            // Sync Featured Image to Media
+            if ($post->featured_image) {
+                self::createMediaRecord($post->featured_image);
+            }
+
+            // Sync Gallery Images to Media
+            if ($post->gallery_images && is_array($post->gallery_images)) {
+                foreach ($post->gallery_images as $image) {
+                    self::createMediaRecord($image);
+                }
+            }
+        });
+    }
+
+    private static function createMediaRecord(string $path): void
+    {
+        // Avoid duplicate by checking path
+        if (Media::where('path', $path)->exists()) {
+            return;
+        }
+
+        $disk = \Illuminate\Support\Facades\Storage::disk('public');
+        if (!$disk->exists($path)) {
+            return;
+        }
+
+        Media::create([
+            'name' => pathinfo($path, PATHINFO_FILENAME),
+            'file_name' => basename($path),
+            'path' => $path,
+            'disk' => 'public',
+            'mime_type' => $disk->mimeType($path),
+            'size' => $disk->size($path),
+            'uploaded_by' => auth()->id(),
+            'folder' => 'posts', // Optional organization
+        ]);
     }
 
     private static function convertToWebp(?string $path): string

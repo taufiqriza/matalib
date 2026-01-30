@@ -22,4 +22,19 @@ class EditPost extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        if (isset($data['library_images']) && is_array($data['library_images'])) {
+            $gallery = $data['gallery_images'] ?? [];
+            if (!is_array($gallery)) $gallery = [];
+            
+            // Merge unique paths
+            $data['gallery_images'] = array_values(array_unique(array_merge($gallery, $data['library_images'])));
+            
+            unset($data['library_images']);
+        }
+
+        return $data;
+    }
 }

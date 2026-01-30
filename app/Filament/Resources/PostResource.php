@@ -84,6 +84,32 @@ class PostResource extends Resource
                                     ->maxSize(10240) // Allow up to 10MB upload, but it will be compressed
                                     ->columnSpanFull()
                                     ->helperText('Upload multiple images. They will be automatically compressed and optimized.'),
+                                
+                                Forms\Components\Select::make('library_images')
+                                    ->label('Add from Media Library')
+                                    ->multiple()
+                                    ->searchable()
+                                    ->options(function () {
+                                        return \App\Models\Media::where('mime_type', 'like', 'image/%')
+                                            ->latest()
+                                            ->take(50)
+                                            ->get()
+                                            ->mapWithKeys(function ($media) {
+                                                return [$media->path => $media->file_name . ' (' . $media->human_size . ')'];
+                                            });
+                                    })
+                                    ->getSearchResultsUsing(function (string $search) {
+                                        return \App\Models\Media::where('mime_type', 'like', 'image/%')
+                                            ->where('name', 'like', "%{$search}%")
+                                            ->orWhere('file_name', 'like', "%{$search}%")
+                                            ->limit(50)
+                                            ->get()
+                                            ->mapWithKeys(function ($media) {
+                                                return [$media->path => $media->file_name];
+                                            });
+                                    })
+                                    ->columnSpanFull()
+                                    ->helperText('Select existing images from the library to add to the gallery.'),
                             ])
                             ->collapsed(),
                     ])
