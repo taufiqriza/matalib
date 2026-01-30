@@ -77,24 +77,30 @@ class MediaResource extends Resource
 
         return $table
             ->contentGrid($isGrid ? [
-                'md' => 4,
-                'xl' => 6,
+                'md' => 3,
+                'xl' => 4,
+                '2xl' => 5,
             ] : null)
             ->columns($isGrid ? [
                 Tables\Columns\Layout\Stack::make([
                     Tables\Columns\ImageColumn::make('path')
-                        ->height('100%')
+                        ->height('auto')
                         ->width('100%')
                         ->disk('public')
-                        ->extraImgAttributes(['class' => 'object-cover w-full h-48 rounded-lg']),
-                    Tables\Columns\TextColumn::make('name')
-                        ->weight('bold')
-                        ->limit(20)
-                        ->tooltip(fn ($record) => $record->name),
-                    Tables\Columns\TextColumn::make('human_size')
-                        ->color('gray')
-                        ->size('xs'),
-                ])->space(3),
+                        ->extraImgAttributes(['class' => 'object-cover w-full aspect-[4/3] rounded-lg shadow-sm border border-gray-100']),
+                    
+                    Tables\Columns\Layout\Stack::make([
+                        Tables\Columns\TextColumn::make('name')
+                            ->weight('bold')
+                            ->lineClamp(1)
+                            ->size('sm')
+                            ->tooltip(fn (Media $record) => $record->name),
+                        
+                        Tables\Columns\TextColumn::make('human_size')
+                            ->color('gray')
+                            ->size('xs'),
+                    ])->space(1),
+                ])->space(2)->extraAttributes(['class' => 'p-2']),
             ] : [
                 Tables\Columns\ImageColumn::make('path')
                     ->label('Preview')
