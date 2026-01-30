@@ -87,20 +87,8 @@ class MediaResource extends Resource
                         ->height('auto')
                         ->width('100%')
                         ->disk('public')
-                        ->extraImgAttributes(['class' => 'object-cover w-full aspect-[4/3] rounded-lg shadow-sm border border-gray-100']),
-                    
-                    Tables\Columns\Layout\Stack::make([
-                        Tables\Columns\TextColumn::make('name')
-                            ->weight('bold')
-                            ->lineClamp(1)
-                            ->size('sm')
-                            ->tooltip(fn (Media $record) => $record->name),
-                        
-                        Tables\Columns\TextColumn::make('human_size')
-                            ->color('gray')
-                            ->size('xs'),
-                    ])->space(1),
-                ])->space(2)->extraAttributes(['class' => 'p-2']),
+                        ->extraImgAttributes(['class' => 'object-cover w-full aspect-[4/3] rounded-lg shadow-sm hover:shadow-md transition duration-300']),
+                ])->space(0),
             ] : [
                 Tables\Columns\ImageColumn::make('path')
                     ->label('Preview')
@@ -145,7 +133,7 @@ class MediaResource extends Resource
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->bulkActions($isGrid ? [] : [
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
