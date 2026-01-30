@@ -138,7 +138,28 @@
                             @endif
                         </div>
 
-                        {{-- Author Bio Footer --}}
+                            
+                            {{-- Image Gallery / Slideshow --}}
+                            @if($post->gallery_images && count($post->gallery_images) > 0)
+                            <div class="mt-8 mb-8">
+                                <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 px-6 sm:px-10">Galeri Foto</h3>
+                                
+                                {{-- Scrollable Container (Native App Feel) --}}
+                                <div class="flex overflow-x-auto gap-4 px-6 sm:px-10 pb-6 hide-scrollbar snap-x snap-mandatory">
+                                    @foreach($post->gallery_images as $image)
+                                    <div class="snap-center flex-shrink-0 w-64 sm:w-80 rounded-2xl overflow-hidden shadow-md bg-gray-100 border border-gray-100 relative group">
+                                        <div class="aspect-[4/3]">
+                                            <a href="{{ asset('storage/' . $image) }}" target="_blank">
+                                                <img src="{{ asset('storage/' . $image) }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            @endif
+
+                            {{-- Author Bio Footer --}}
                         <div class="bg-gray-50 p-6 sm:p-10 border-t border-gray-100">
                             <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
                                 <div class="w-16 h-16 rounded-full bg-white border-2 border-primary-100 p-1 shadow-sm flex-shrink-0">
